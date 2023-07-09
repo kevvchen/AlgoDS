@@ -13,7 +13,7 @@ def dfs_inorder_recursive(root):
 
     # 2ND WAY
     # if not root:
-    #     return []
+    #     return [] 
     # Generating a new empty list everytime the recursive calls -- thus needing concatenation
     # result = []
     # # This contains all the left subtree 
@@ -47,6 +47,13 @@ def dfs_postorder_recursive(root):
         return []
     else:
         return dfs_postorder_recursive(root.left) + dfs_postorder_recursive(root.right) + [root.val]
+
+
+# DFS - Recursive with no particular order
+def dfs_traversal(root):
+    if not root:
+        return []
+    return dfs_traversal(root.left) + dfs_traversal(root.right)
 
 # Creating a binary tree
 root = Node('a')
